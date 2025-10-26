@@ -32,13 +32,22 @@ public class Main {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
     public static String getOSName(int osType){
-        return (osType == 0) ? "IOS" : "Android";
+        if (osType == 0) {
+            return "IOS";
+        } else {
+            return "Android";
+        }
     }
     private static String getVersionType(int manufactureYear, int currentYear) {
-        return (manufactureYear < currentYear) ? "облегченную" : "обычную";
+        if (manufactureYear < currentYear) {
+            return "облегченную";
+        } else {
+            return "обычную";
+        }
     }
     public static void recommendAppVersion(int osType, int manufactureYear) {
         int currentYear = 2015;
+
         String osName = getOSName(osType);
         String versionType = getVersionType(manufactureYear, currentYear);
         System.out.println("Установите " + versionType + " версию для " + osName);

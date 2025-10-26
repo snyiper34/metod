@@ -34,14 +34,16 @@ public class Main {
     public static String getOSName(int osType){
         if (osType == 0) {
             return "IOS";
-        } else {
+        }
+        else {
             return "Android";
         }
     }
     private static String getVersionType(int manufactureYear, int currentYear) {
         if (manufactureYear < currentYear) {
             return "облегченную";
-        } else {
+        }
+        else {
             return "обычную";
         }
     }

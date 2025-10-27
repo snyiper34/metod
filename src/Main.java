@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 
+import static java.time.LocalDate.now;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -48,7 +50,7 @@ public class Main {
         }
     }
     public static void recommendAppVersion(int osType, int manufactureYear) {
-        int currentYear = 2015;
+        int currentYear = LocalDate.now().getYear();
 
         String osName = getOSName(osType);
         String versionType = getVersionType(manufactureYear, currentYear);
@@ -60,9 +62,9 @@ public class Main {
         int deliveryDays;
         if (deliveryDistance <= 20) {
             deliveryDays = 1;
-        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+        } else if (deliveryDistance  <= 60) {
             deliveryDays = 2;
-        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+        } else if (deliveryDistance  <= 100) {
             deliveryDays = 3;
         }else {
             deliveryDays = -1;
